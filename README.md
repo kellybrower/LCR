@@ -16,4 +16,5 @@ TODO: the above instruction may or not work, in the meantime if you want the app
 
 ```
 >>> cd LCR/.stack-work/dist/(your-architecture)/ghc-9.6.3/build/LCR-exe
+>>> ./LCR-exe
 ```
