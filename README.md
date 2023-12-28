@@ -11,10 +11,3 @@ To run the program locally, use the following commands:
 
 >>> stack exec LCR-exe
 ```
-
-TODO: the above instruction may or not work, in the meantime if you want the app to work you have to go to
-
-```
->>> cd LCR/.stack-work/dist/(your-architecture)/ghc-9.6.3/build/LCR-exe
->>> ./LCR-exe
-```
