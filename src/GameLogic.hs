@@ -36,20 +36,6 @@ isGameOver game =
     hasChips :: Player -> Bool
     hasChips player = chips player > 0
 
--- Assuming previous definitions of Player, DiceOutcome, Game, rollDice, applyRules
--- A player plays a round
--- playRound :: Game -> Int -> IO Game
--- playRound game playerNumber = do
---   let maybePlayer = find (\p -> playerId p == playerNumber) game
---   case maybePlayer of
---     Just player -> do
---       putStrLn $ "Player " ++ show (playerId player) ++ "'s turn. Press any key to roll the dice."
---       _ <- getLine
---       outcomes <- rollDice player
---       putStrLn $ "Player " ++ show (playerId player) ++ " rolled: " ++ show outcomes
---       let updatedGame = applyRules game outcomes
---       return updatedGame
---     Nothing -> return game -- If the player number is not found, return the game unchanged.
 -- Assuming Game is a list of Players
 playRound :: Game -> Int -> IO Game
 playRound game playerNumber = do
@@ -60,33 +46,42 @@ playRound game playerNumber = do
   return updatedGame
 
 -- Implement the applyRules function
-applyRules :: Game -> [DiceOutcome] -> Game
-applyRules game outcomes = foldl applyOutcome game outcomes
+applyRules :: Game -> [DiceOutcome] -> Int -> Game
+applyRules game outcomes playerNumber = foldl (applyOutcome playerNumber) game outcomes
   where
-    applyOutcome :: Game -> DiceOutcome -> Game
-    applyOutcome g outcome = case outcome of
-      GoLeft -> moveChip g (-1)
-      GoRight -> moveChip g 1
-      GoCenter -> centerChip g
+    applyOutcome :: Int -> Game -> DiceOutcome -> Game
+    applyOutcome pNum g outcome = case outcome of
+      GoLeft -> moveChip g pNum (-1)
+      GoRight -> moveChip g pNum 1
+      GoCenter -> centerChip g pNum
       NoEffect -> g
 
-    -- Function to move a chip to the left (-1) or right (1)
-    moveChip :: Game -> Int -> Game
-    moveChip g direction =
-      let currentPlayer = head g
-          nextIndex = (playerId currentPlayer + direction + length g) `mod` length g
-          nextPlayer = g !! nextIndex
-          updatedCurrentPlayer = currentPlayer {chips = chips currentPlayer - 1}
-          updatedNextPlayer = nextPlayer {chips = chips nextPlayer + 1}
-       in replacePlayer (replacePlayer g updatedCurrentPlayer) updatedNextPlayer
+moveChip :: Game -> Int -> Int -> Game
+moveChip game currentPlayerIndex direction =
+  let totalPlayers = length game
+      nextIndex = (currentPlayerIndex + direction + totalPlayers) `mod` totalPlayers
+      gameWithUpdatedCurrentPlayer = updateList game currentPlayerIndex (updateCurrentPlayer (game !! currentPlayerIndex))
+      updatedGame = updateList gameWithUpdatedCurrentPlayer nextIndex (updateNextPlayer (game !! nextIndex))
+   in updatedGame
+  where
+    updateCurrentPlayer player = player {chips = chips player - 1}
+    updateNextPlayer player = player {chips = chips player + 1}
 
-    -- Function to move a chip to the center
-    centerChip :: Game -> Game
-    centerChip g =
-      let currentPlayer = head g
-          updatedCurrentPlayer = currentPlayer {chips = chips currentPlayer - 1}
-       in replacePlayer g updatedCurrentPlayer
+    updateList :: [Player] -> Int -> Player -> [Player]
+    updateList xs index newElement =
+      take index xs ++ [newElement] ++ drop (index + 1) xs
 
-    -- Function to replace a player in the game list
-    replacePlayer :: Game -> Player -> Game
-    replacePlayer g p = map (\player -> if playerId player == playerId p then p else player) g
+centerChip :: Game -> Int -> Game
+centerChip game playerNumber =
+  let currentPlayerIndex = playerNumber - 1 -- Adjusting playerNumber to 0-based index
+      currentPlayer = game !! currentPlayerIndex
+      updatedCurrentPlayer = currentPlayer {chips = chips currentPlayer - 1}
+   in updateList game currentPlayerIndex updatedCurrentPlayer
+  where
+    updateList :: [Player] -> Int -> Player -> [Player]
+    updateList xs index newElement =
+      take index xs ++ [newElement] ++ drop (index + 1) xs
+
+-- Function to replace a player in the game list
+replacePlayer :: Game -> Player -> Game
+replacePlayer g p = map (\player -> if playerId player == playerId p then p else player) g
