@@ -8,9 +8,13 @@ import Data.List (find)
 import System.Random (randomRIO)
 import Types (DiceOutcome (..), Game, Player (..))
 
--- Initialize the game
+-- -- Initialize the game
+-- initGame :: Int -> Game
+-- initGame numPlayers = replicate numPlayers (Player 1 3)
+--
+--
 initGame :: Int -> Game
-initGame numPlayers = replicate numPlayers (Player 1 3)
+initGame numPlayers = [Player id 3 | id <- [1 .. numPlayers]]
 
 -- Roll the dice for a player
 rollDice :: Maybe Player -> IO [DiceOutcome]
@@ -49,7 +53,7 @@ playRound game playerNumber = do
   outcomes <- rollDice maybePlayer
   case maybePlayer of
     Just player -> putStrLn $ "Player " ++ show (playerId player) ++ " rolled: " ++ show outcomes
-    Nothing -> putStrLn $ "Invalid player number."
+    Nothing -> putStrLn "Invalid player number."
   let updatedGame = case maybePlayer of
         Just player -> applyRules game outcomes playerNumber
         Nothing -> game -- If the player is invalid, return the game unchanged.
@@ -57,7 +61,7 @@ playRound game playerNumber = do
 
 -- Implement the applyRules function
 applyRules :: Game -> [DiceOutcome] -> Int -> Game
-applyRules game outcomes playerNumber = foldl (applyOutcome playerNumber) game outcomes
+applyRules game outcomes playerNumber = foldr (flip $ applyOutcome playerNumber) game outcomes
   where
     applyOutcome :: Int -> Game -> DiceOutcome -> Game
     applyOutcome pNum g outcome = case outcome of
@@ -84,15 +88,10 @@ moveChip game currentPlayerIndex direction =
 centerChip :: Game -> Int -> Game
 centerChip game playerNumber =
   let currentPlayerIndex = playerNumber - 1 -- Adjusting playerNumber to 0-based index
-      maybePlayer = safeGet currentPlayerIndex game
-      updatedGame = maybe game (updateGame currentPlayerIndex) maybePlayer
-   in updatedGame
+      currentPlayer = game !! currentPlayerIndex
+      updatedCurrentPlayer = currentPlayer {chips = chips currentPlayer - 1}
+   in updateList game currentPlayerIndex updatedCurrentPlayer
   where
-    updateGame :: Int -> Player -> Game
-    updateGame index player =
-      let updatedPlayer = player {chips = chips player - 1}
-       in updateList game index updatedPlayer
-
     updateList :: [Player] -> Int -> Player -> [Player]
     updateList xs index newElement =
       take index xs ++ [newElement] ++ drop (index + 1) xs
