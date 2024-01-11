@@ -3,6 +3,8 @@
 
 module Main where
 
+import Data.Aeson (encode)
+import qualified Data.ByteString.Lazy as B
 import Data.List (find)
 import GameLogic (applyRules, initGame, isGameOver, playRound, rollDice)
 import Types (DiceOutcome, Game, Player (..))
@@ -11,19 +13,23 @@ main :: IO ()
 main = do
   putStrLn "Enter the number of players:"
   numPlayers <- readLn
-  let game = initGame numPlayers
-  finalState <- playGame game 1 numPlayers
-  displayWinner finalState
+  let initialState = initGame numPlayers
+  finalStates <- playGame initialState [] 1 numPlayers
 
-playGame :: Game -> Int -> Int -> IO Game
-playGame game currentPlayer totalPlayers
-  | isGameOver game = return game
+  -- Reverse the list of states to have them in chronological order
+  let jsonStates = encode (reverse finalStates)
+  B.writeFile "my-game-ui/src/game_log.json" jsonStates
+  putStrLn "Game log saved to game_log.json"
+
+playGame :: Game -> [Game] -> Int -> Int -> IO [Game]
+playGame game states currentPlayer totalPlayers
+  | isGameOver game = return (game : states)
   | otherwise = do
       putStrLn $ "Player " ++ show currentPlayer ++ "'s turn, press any key to roll the dice."
       _ <- getLine
       gameAfterTurn <- playRound game currentPlayer
       let nextPlayer = if currentPlayer < totalPlayers then currentPlayer + 1 else 1
-      playGame gameAfterTurn nextPlayer totalPlayers
+      playGame gameAfterTurn (game : states) nextPlayer totalPlayers
 
 displayWinner :: Game -> IO ()
 displayWinner (players, pot) =
@@ -34,4 +40,4 @@ displayWinner (players, pot) =
     Nothing -> putStrLn "No winner."
   where
     findWinner :: [Player] -> Maybe Player
-    findWinner ps = find (\p -> chips p > 0) ps
+    findWinner = find (\p -> chips p > 0)

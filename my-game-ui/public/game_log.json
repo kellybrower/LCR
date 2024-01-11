@@ -1,0 +1,1396 @@
+[
+  [
+    [
+      {
+        "chips": 3,
+        "playerId": 1
+      },
+      {
+        "chips": 3,
+        "playerId": 2
+      },
+      {
+        "chips": 3,
+        "playerId": 3
+      }
+    ],
+    0
+  ],
+  [
+    [
+      {
+        "chips": 3,
+        "playerId": 1
+      },
+      {
+        "chips": 1,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 3,
+        "playerId": 1
+      },
+      {
+        "chips": 1,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 3,
+        "playerId": 1
+      },
+      {
+        "chips": 1,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 4,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 4,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 4,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 4,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 4,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 4,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 4,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 4,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 4,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    1
+  ],
+  [
+    [
+      {
+        "chips": 3,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    2
+  ],
+  [
+    [
+      {
+        "chips": 3,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 4,
+        "playerId": 3
+      }
+    ],
+    2
+  ],
+  [
+    [
+      {
+        "chips": 3,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 3,
+        "playerId": 3
+      }
+    ],
+    3
+  ],
+  [
+    [
+      {
+        "chips": 2,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 3,
+        "playerId": 3
+      }
+    ],
+    4
+  ],
+  [
+    [
+      {
+        "chips": 2,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 3,
+        "playerId": 3
+      }
+    ],
+    4
+  ],
+  [
+    [
+      {
+        "chips": 2,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    5
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 2,
+        "playerId": 3
+      }
+    ],
+    6
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 1,
+        "playerId": 3
+      }
+    ],
+    7
+  ],
+  [
+    [
+      {
+        "chips": 1,
+        "playerId": 1
+      },
+      {
+        "chips": 0,
+        "playerId": 2
+      },
+      {
+        "chips": 0,
+        "playerId": 3
+      }
+    ],
+    8
+  ]
+]
