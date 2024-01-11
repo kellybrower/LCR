@@ -3,25 +3,35 @@
 
 module Main where
 
+import Data.List (find)
 import GameLogic (applyRules, initGame, isGameOver, playRound, rollDice)
-import Types (DiceOutcome, Game, Player (..)) -- Import Types if needed
+import Types (DiceOutcome, Game, Player (..))
 
 main :: IO ()
 main = do
-  putStrLn "Starting the game with 2 players."
-  let game = initGame 2 -- Initialize game with 2 players
-  finalState <- playGame game
-  print finalState
+  putStrLn "Enter the number of players:"
+  numPlayers <- readLn
+  let game = initGame numPlayers
+  finalState <- playGame game 1 numPlayers
+  displayWinner finalState
 
-playGame :: Game -> IO Game
-playGame game = do
-  if isGameOver game
-    then return game
-    else do
-      putStrLn "Player 1's turn, press any key to roll the dice."
+playGame :: Game -> Int -> Int -> IO Game
+playGame game currentPlayer totalPlayers
+  | isGameOver game = return game
+  | otherwise = do
+      putStrLn $ "Player " ++ show currentPlayer ++ "'s turn, press any key to roll the dice."
       _ <- getLine
-      gameAfterP1 <- playRound game 1
-      putStrLn "Player 2's turn, press any key to roll the dice."
-      _ <- getLine
-      gameAfterP2 <- playRound gameAfterP1 2
-      playGame gameAfterP2
+      gameAfterTurn <- playRound game currentPlayer
+      let nextPlayer = if currentPlayer < totalPlayers then currentPlayer + 1 else 1
+      playGame gameAfterTurn nextPlayer totalPlayers
+
+displayWinner :: Game -> IO ()
+displayWinner (players, pot) =
+  case findWinner players of
+    Just winner -> do
+      putStrLn $ "The winner is Player " ++ show (playerId winner)
+      putStrLn $ "Total chips including pot: " ++ show (chips winner + pot)
+    Nothing -> putStrLn "No winner."
+  where
+    findWinner :: [Player] -> Maybe Player
+    findWinner ps = find (\p -> chips p > 0) ps

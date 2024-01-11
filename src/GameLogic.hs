@@ -14,7 +14,29 @@ import Types (DiceOutcome (..), Game, Player (..))
 --
 --
 initGame :: Int -> Game
-initGame numPlayers = [Player id 3 | id <- [1 .. numPlayers]]
+initGame numPlayers = (players, initialPot)
+  where
+    players = [Player pid 3 | pid <- [1 .. numPlayers]]
+    initialPot = 0
+
+safeGet :: Int -> [Player] -> Maybe Player
+safeGet i xs
+  | i >= 0 && i < length xs = Just (xs !! i)
+  | otherwise = Nothing
+
+addToPot :: Game -> Int -> Game
+addToPot (players, pot) amount = (players, pot + amount)
+
+awardPot :: Game -> Int -> Game
+awardPot (players, pot) winnerId =
+  (updatedPlayers, 0) -- Reset the pot to 0
+  where
+    updatedPlayers = map updatePlayerChips players
+
+    updatePlayerChips :: Player -> Player
+    updatePlayerChips player
+      | playerId player == winnerId = player {chips = chips player + pot}
+      | otherwise = player
 
 -- Roll the dice for a player
 rollDice :: Maybe Player -> IO [DiceOutcome]
@@ -33,23 +55,20 @@ rollDice (Just player) = mapM (const rollOne) [1 .. numDice]
         3 -> GoCenter
         _ -> NoEffect
 
--- Check if the game is over
 isGameOver :: Game -> Bool
-isGameOver game =
-  length (filter hasChips game) <= 1
+isGameOver (players, pot) =
+  let playersWithChips = filter hasChips players
+   in if length playersWithChips == 1
+        then True -- Game over
+        else False
   where
     hasChips :: Player -> Bool
     hasChips player = chips player > 0
 
-safeGet :: Int -> [a] -> Maybe a
-safeGet i xs
-  | i >= 0 && i < length xs = Just (xs !! i)
-  | otherwise = Nothing
-
--- Assuming Game is a list of Players
+-- Function to play a round of the game
 playRound :: Game -> Int -> IO Game
-playRound game playerNumber = do
-  let maybePlayer = safeGet (playerNumber - 1) game -- Get the current player based on playerNumber
+playRound game@(players, pot) playerNumber = do
+  let maybePlayer = safeGet (playerNumber - 1) players -- Get the current player based on playerNumber
   outcomes <- rollDice maybePlayer
   case maybePlayer of
     Just player -> putStrLn $ "Player " ++ show (playerId player) ++ " rolled: " ++ show outcomes
@@ -71,26 +90,38 @@ applyRules game outcomes playerNumber = foldr (flip $ applyOutcome playerNumber)
       NoEffect -> g
 
 moveChip :: Game -> Int -> Int -> Game
-moveChip game currentPlayerIndex direction =
-  let totalPlayers = length game
-      nextIndex = (currentPlayerIndex + direction + totalPlayers) `mod` totalPlayers
-      gameWithUpdatedCurrentPlayer = maybe game (updateList game currentPlayerIndex . updateCurrentPlayer) (safeGet currentPlayerIndex game)
-      updatedGame = maybe gameWithUpdatedCurrentPlayer (updateList gameWithUpdatedCurrentPlayer nextIndex . updateNextPlayer) (safeGet nextIndex game)
-   in updatedGame
+moveChip (players, pot) currentPlayerIndex direction =
+  case safeGet currentPlayerIndex players of
+    Just currentPlayer ->
+      if chips currentPlayer > 0
+        then
+          let totalPlayers = length players
+              nextIndex = (currentPlayerIndex + direction + totalPlayers) `mod` totalPlayers
+              gameWithUpdatedCurrentPlayer = updateList players currentPlayerIndex (updateCurrentPlayer currentPlayer)
+              updatedPlayers = maybe gameWithUpdatedCurrentPlayer (updateList gameWithUpdatedCurrentPlayer nextIndex . updateNextPlayer) (safeGet nextIndex players)
+           in (updatedPlayers, pot)
+        else (players, pot)
+    Nothing -> (players, pot)
   where
     updateCurrentPlayer player = player {chips = chips player - 1}
     updateNextPlayer player = player {chips = chips player + 1}
-
     updateList :: [Player] -> Int -> Player -> [Player]
     updateList xs index newElement =
       take index xs ++ [newElement] ++ drop (index + 1) xs
 
 centerChip :: Game -> Int -> Game
-centerChip game playerNumber =
-  let currentPlayerIndex = playerNumber - 1 -- Adjusting playerNumber to 0-based index
-      currentPlayer = game !! currentPlayerIndex
-      updatedCurrentPlayer = currentPlayer {chips = chips currentPlayer - 1}
-   in updateList game currentPlayerIndex updatedCurrentPlayer
+centerChip (players, pot) playerNumber =
+  let currentPlayerIndex = playerNumber - 1
+   in case safeGet currentPlayerIndex players of
+        Just currentPlayer ->
+          if chips currentPlayer > 0
+            then
+              let updatedCurrentPlayer = currentPlayer {chips = chips currentPlayer - 1}
+                  updatedPlayers = updateList players currentPlayerIndex updatedCurrentPlayer
+                  updatedGame = (updatedPlayers, pot + 1)
+               in updatedGame
+            else (players, pot)
+        Nothing -> (players, pot)
   where
     updateList :: [Player] -> Int -> Player -> [Player]
     updateList xs index newElement =
@@ -98,4 +129,12 @@ centerChip game playerNumber =
 
 -- Function to replace a player in the game list
 replacePlayer :: Game -> Player -> Game
-replacePlayer g p = map (\player -> if playerId player == playerId p then p else player) g
+replacePlayer (players, pot) playerToReplace =
+  (updatedPlayers, pot)
+  where
+    updatedPlayers = map replaceIfMatch players
+
+    replaceIfMatch :: Player -> Player
+    replaceIfMatch player
+      | playerId player == playerId playerToReplace = playerToReplace
+      | otherwise = player
