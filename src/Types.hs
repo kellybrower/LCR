@@ -1,10 +1,15 @@
-{-# LANGUAGE GADTs #-}
-{-# OPTIONS_GHC -Wno-missing-export-lists #-}
+{-# LANGUAGE DeriveAnyClass #-}
+{-# LANGUAGE DeriveGeneric #-}
 
 module Types where
 
-data DiceOutcome = GoLeft | GoRight | GoCenter | NoEffect deriving (Show, Eq)
+import Data.Aeson (ToJSON)
+import GHC.Generics (Generic)
 
-data Player = Player {playerId :: Int, chips :: Int} deriving (Show)
+data DiceOutcome = GoLeft | GoRight | GoCenter | NoEffect
+  deriving (Show, Eq, Generic, ToJSON)
+
+data Player = Player {playerId :: Int, chips :: Int}
+  deriving (Show, Generic, ToJSON)
 
 type Game = ([Player], Int)
