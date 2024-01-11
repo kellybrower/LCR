@@ -4,10 +4,15 @@
 
 Make sure that you have GHC and Stack installed. You can find installation instructions [here](https://www.haskell.org/downloads/)
 
-To run the program locally, use the following commands:
+To get a game_log out, run 
 
 ```
->>> stack build
-
->>> stack exec LCR-exe
+>>> stack run
 ```
+This will save a `game_log.json` to the right place in the typescript files.
+
+Afterward, making sure you have `npm` installed, run the app locally via
+```
+>>> npm start
+```
+WIP: enjoy!  Let's collab!
