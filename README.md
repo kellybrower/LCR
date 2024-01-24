@@ -11,7 +11,7 @@ To get a game_log out, run
 ```
 This will save a `game_log.json` to the right place in the typescript files.
 
-Afterward, making sure you have `npm` installed, run the app locally via
+Afterward, making sure you have `npm` installed, run the app locally after you `cd my-game-ui` via
 ```
 >>> npm start
 ```
